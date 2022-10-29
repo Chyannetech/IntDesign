@@ -3,4 +3,8 @@ class ProductsController < ApplicationController
     # fetches all products from database 
 @products = Product.all
   end
+
+  def show
+    @product = Product.find(params[:id])
+  end
 end
