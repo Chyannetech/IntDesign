@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Sets the home page to /products route
   root "products#index"
 
-  # Defines the root path route ("/")
-  get "/products", to: "products#index"
-  get "/products/:id", to: "products#show"
+  # Maps all routes for the products collection 
+  resources :products
+  
 end
