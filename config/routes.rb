@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  # Sets the home page to /products route
+  root "products#index"
+
   # Defines the root path route ("/")
-  # root "products#index"
   get "/products", to: "products#index"
 end
