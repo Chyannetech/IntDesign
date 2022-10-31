@@ -12,17 +12,5 @@
 <%= render @product.comments %>
 
 <h3>Add a review:</h3>
-<%= form_with model: [ @product, @product.comments.build] do |form| %>
-    <p>
-        <%= form.label :name %><br>
-        <%= form.text_field :commenter %>
-    </p>
-    <p>
-    <%= form.label :review %><br>
-    <%= form.text_area :body %>
-    </p>
-    <p>
-    <%= form.submit %>
-    </p>
-    <% end %>
+<%= render 'comments/form' %>
 
