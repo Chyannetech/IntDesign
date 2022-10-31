@@ -9,19 +9,7 @@
     }%></li>
 <ul>
 <h3>Reviews</h3>
-<%= @product.comments.each do |comment| %>
-    <p>
-
-    <p>
-    <strong>Name:</strong>
-    <%= comment.commenter %>
-    </p>
-
-    <p>
-    <strong>Review:</strong>
-    <%= comment.body %>
-    </p>
-<% end %>
+<%= render @product.comments %>
 
 <h3>Add a review:</h3>
 <%= form_with model: [ @product, @product.comments.build] do |form| %>
