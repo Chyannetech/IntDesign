@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "products#index"
 
   # Maps all routes for the products collection 
-  resources :products
-  
+  resources :products do
+    resources :comments
+  end
 end
