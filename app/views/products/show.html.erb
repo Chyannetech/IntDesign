@@ -8,3 +8,33 @@
         turbo_confirm: "Are you sure?"
     }%></li>
 <ul>
+<h3>Reviews</h3>
+<%= @product.comments.each do |comment| %>
+    <p>
+
+    <p>
+    <strong>Name:</strong>
+    <%= comment.commenter %>
+    </p>
+
+    <p>
+    <strong>Review:</strong>
+    <%= comment.body %>
+    </p>
+<% end %>
+
+<h3>Add a review:</h3>
+<%= form_with model: [ @product, @product.comments.build] do |form| %>
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :commenter %>
+    </p>
+    <p>
+    <%= form.label :review %><br>
+    <%= form.text_area :body %>
+    </p>
+    <p>
+    <%= form.submit %>
+    </p>
+    <% end %>
+
