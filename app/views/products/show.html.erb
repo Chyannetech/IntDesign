@@ -6,8 +6,9 @@
     <li><%= link_to "Delete Item", product_path(@product), data: {
         turbo_method: :delete, 
         turbo_confirm: "Are you sure?"
-    }%></li>
-<ul>
+    } %></li>
+</ul>
+
 <h3>Reviews</h3>
 <%= render @product.comments %>
 
